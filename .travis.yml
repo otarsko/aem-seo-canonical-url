@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk8
   - oraclejdk7
-script: mvn clean test
+script: mvn clean jacoco:prepare-agent verify jacoco:report coveralls:report
