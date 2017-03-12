@@ -189,6 +189,22 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.18.1</version>
+                    <configuration>
+                        <argLine>${argLine}</argLine>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.6.201602180812</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>4.3.0</version>
+                    <configuration>
+                        <sourceEncoding>UTF-8</sourceEncoding>
+                    </configuration>
                 </plugin>
                 <!-- Maven Failsafe Plugin -->
                 <plugin>
