@@ -3,10 +3,10 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Canonical Tagging Support for AEM
-This is a library for inserting canonical tags into you pages.
+This is a library for inserting canonical tags into your pages.
 
 ## Why
-Many sites requires content duplication. For example, there can be a sub-tree for each department in the company,
+Many sites require content duplication. For example, there can be a sub-tree for each department in the company,
 where they have their content. However, they may have content which is equal to content in the corporate section.
 
 At the same time, content duplication can greatly affect your ranking.
