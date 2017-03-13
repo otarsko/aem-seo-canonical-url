@@ -18,6 +18,8 @@ This library provides next features:
 * strict mapping, e.g. /path/page1 --(has canonical page)--> /anotherPath/page1
 * mapping by the pattern with lookup path, e.g. /path/page[0-9] --(all pages under path have canonical pages)--> /anotherPath
 
+Library has been tested on AEM 6.1 SP1, and JDK 7/8.
+
 ## How
 To build and install bundle to your AEM instance, use next command (host/port values should be adjusted to the values you have):
 
