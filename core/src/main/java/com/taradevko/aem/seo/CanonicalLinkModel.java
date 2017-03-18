@@ -10,6 +10,16 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * Sling model to be used for providing canonical tags. For HTL (sightly) it can look as follows:
+ * <pre>
+ *     &lt;link
+ *        data-sly-use.canonicalTagging="com.taradevko.aem.seo.CanonicalLinkModel"
+ *        data-sly-test="${canonicalTagging.hasCanonicalPage}"
+ *        rel="canonical"
+ *        href="${canonicalTagging.canonicalUrl}.html" /&gt;
+ * </pre>
+ */
 @Model(adaptables = SlingHttpServletRequest.class)
 public class CanonicalLinkModel {
 
@@ -26,10 +36,20 @@ public class CanonicalLinkModel {
         canonicalUrl = canonicalTagging.getCanonicalLink(resourceModel.getPath());
     }
 
+    /**
+     * Method for checking ic current page has canonical.
+     *
+     * @return true if current page has canonical page. Otherwise - false.
+     */
     public boolean isHasCanonicalPage() {
         return StringUtils.isNotBlank(canonicalUrl);
     }
 
+    /**
+     * Method for getting canonical page.
+     *
+     * @return canonical url as a string or null.
+     */
     public String getCanonicalUrl() {
         return canonicalUrl;
     }
