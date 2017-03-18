@@ -64,8 +64,6 @@
                         <artifactId>maven-sling-plugin</artifactId>
                         <configuration>
                             <!-- Note that this requires /apps/taradevko/install to exist!!          -->
-                            <!--    This is typically the case when ui.apps is deployed first                -->
-                            <!--    Otherwise, create /apps/taradevko/install manually (CRXDE|Lite)  -->
                             <slingUrlSuffix>/apps/taradevko/install/</slingUrlSuffix>
                             <failOnError>true</failOnError>
                         </configuration>

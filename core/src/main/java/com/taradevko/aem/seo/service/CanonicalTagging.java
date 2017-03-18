@@ -5,25 +5,25 @@ package com.taradevko.aem.seo.service;
  *
  * OSGi Implementation is to be configured. Rule has next syntax:
  * <ul>
- *     <li>for **strict** rules, where page is mapped to another page: <br/>
- *      `_PATH PAGE 1_=>_CANONICAL PAGE PATH_`</li>
- *     <li>for rules which map pages by regex and provide lookup path: <br/>
- *      `_PATTERN FOR PAGE WHICH CHILD WILL BE MAPPED_>_LOOKUP PATH_`</li>
+ *     <li>for **strict** rules, where page is mapped to another page:
+ *      `_PATH PAGE 1_=&gt;_CANONICAL PAGE PATH_`</li>
+ *     <li>for rules which map pages by regex and provide lookup path:
+ *      `_PATTERN FOR PAGE WHICH CHILD WILL BE MAPPED_&gt;_LOOKUP PATH_`</li>
  * </ul>
  *
- * <p>Example:</p>
- * <p>
- *      for rule <code>/content/mysite/categoty[0-9]>/content/mysite/maincategory</code> <br/>
- *      configured publish domain <code>https://doma.in</code> <br/>
- *      and resource path <code>/content/mysite/categoty4/page-with-canonical/component</code> <br/>
+ * <p>Examples:</p>
+ * <pre>
+ *      for rule <code>/content/mysite/categoty[0-9]&gt;/content/mysite/maincategory</code>
+ *      configured publish domain <code>https://doma.in</code>
+ *      and resource path <code>/content/mysite/categoty4/page-with-canonical/component</code>
  *      canonical path will be  <code>https://doma.in/content/mysite/maincategory/page-with-canonical</code>
- * </p>
- * <p>
- *     for strict rule <code>/content/mysite/specific/page-with-canonical=>/content/mysite/canonical-specific/page-with-canonical</code>
- *      and resource path <code>/content/mysite/specific/page-with-canonical</code> <br/>
- *      configured publish domain <code>https://doma.in</code> <br/>
+ * </pre>
+ * <pre>
+ *      for strict rule <code>/content/mysite/specific/page-with-canonical=&gt;/content/mysite/canonical-specific/page-with-canonical</code>
+ *      and resource path <code>/content/mysite/specific/page-with-canonical</code>
+ *      configured publish domain <code>https://doma.in</code>
  *      canonical path will be  <code>https://doma.in/content/mysite/canonical-specific/page-with-canonical</code>
- * </p>
+ * </pre>
  */
 public interface CanonicalTagging {
 
