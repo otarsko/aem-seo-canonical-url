@@ -21,20 +21,52 @@
     <groupId>com.taradevko</groupId>
     <artifactId>com.taradevko.aem</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <description>Canonical URL for better AEM SEO</description>
-    
+    <version>${version}</version>
+
+
+    <name>Canonical Tagging Support</name>
+    <description>Canonical Tagging Support for better AEM SEO</description>
+    <url>https://github.com/otarsko/aem-seo-canonical-url</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Oleksandr Tarasenko</name>
+            <email>oleks.tarasenko@gmail.com</email>
+            <organization>AEM Corner</organization>
+            <organizationUrl>http://taradevko.com</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/otarsko/aem-seo-canonical-url.git</connection>
+        <developerConnection>scm:git:ssh://github.com/otarsko/aem-seo-canonical-url.git</developerConnection>
+        <url>https://github.com/otarsko/aem-seo-canonical-url/tree/master</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+
     <modules>
-        <module>core</module>
+        <module>seo</module>
     </modules>
 
     <properties>
         <aem.host>localhost</aem.host>
         <aem.port>4502</aem.port>
-        <sling.user>admin</sling.user>
-        <sling.password>admin</sling.password>
-        <vault.user>admin</vault.user>
-        <vault.password>admin</vault.password>
+        <version>0.1.0</version>
     </properties>
     <build>
         <plugins>
@@ -105,25 +137,9 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <!-- Maven IntelliJ IDEA Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-idea-plugin</artifactId>
-                <version>2.2.1</version>
-                <configuration>
-                    <jdkLevel>1.7</jdkLevel>
-                    <linkModules>true</linkModules>
-                    <downloadSources>true</downloadSources>
-                </configuration>
-            </plugin>
-            <!-- Maven Eclipse Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                </configuration>
+                <artifactId>maven-gpg-plugin</artifactId>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -210,12 +226,6 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>2.18.1</version>
                 </plugin>
-                <!-- Maven Deploy Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
                 <!-- Apache Sling Plugin -->
                 <plugin>
                     <groupId>org.apache.sling</groupId>
@@ -292,6 +302,20 @@
                             <id>attach-javadocs</id>
                             <goals>
                                 <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
                             </goals>
                         </execution>
                     </executions>

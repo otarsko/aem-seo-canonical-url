@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.taradevko</groupId>
         <artifactId>com.taradevko.aem</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${version}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>com.taradevko.aem.seo</artifactId>
@@ -47,6 +47,14 @@
                         </Sling-Model-Packages>
                     </instructions>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
