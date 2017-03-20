@@ -23,11 +23,12 @@
     <parent>
         <groupId>com.taradevko</groupId>
         <artifactId>com.taradevko.aem</artifactId>
-        <version>${version}</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>0.1.0</version>
     </parent>
+
     <artifactId>com.taradevko.aem.seo</artifactId>
     <packaging>bundle</packaging>
+
     <name>Canonical URL for better AEM SEO - Core</name>
     <description>Core bundle for Canonical URL for better AEM SEO</description>
     <build>
