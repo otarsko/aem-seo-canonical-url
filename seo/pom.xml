@@ -24,7 +24,6 @@
         <groupId>com.taradevko</groupId>
         <artifactId>com.taradevko.aem</artifactId>
         <version>0.1.1</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>com.taradevko.aem.seo</artifactId>

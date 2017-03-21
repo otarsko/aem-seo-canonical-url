@@ -5,14 +5,14 @@
 # Canonical Tagging Support for AEM
 This is a library for inserting canonical tags into your pages.
 
-## Why
+## Why this library has been created
 Many sites require content duplication. For example, there can be a sub-tree for each department in the company,
 where they have their content. However, they may have content which is equal to content in the corporate section.
 
 At the same time, content duplication can greatly affect your ranking.
 Unfortunately, AEM does not provide flexible way of handling this.
 
-## What
+## Features
 This library provides next features:
 
 * strict mapping, e.g. /path/page1 --(has canonical page)--> /anotherPath/page1
@@ -20,7 +20,26 @@ This library provides next features:
 
 Library has been tested on AEM 6.1 SP1, and JDK 7/8.
 
-## How
+## Usage
+
+#### Maven
+Add maven dependency to your project:
+
+        <dependency>
+            <groupId>com.taradevko</groupId>
+            <artifactId>com.taradevko.aem.seo</artifactId>
+            <version>0.1.1</version>
+        </dependency>
+
+Embed bundle into the content package to be installed. It may look like this:
+
+        <embedded>
+             <groupId>com.taradevko</groupId>
+             <artifactId>com.taradevko.aem.seo</artifactId>
+             <filter>true</filter>
+        </embedded>
+
+#### Building from the sources
 To build and install bundle to your AEM instance, use next command (host/port values should be adjusted to the values you have):
 
 `mvn clean install -PautoInstallBundle -Daem.host=localhost -Daem.port=4502`
@@ -74,3 +93,6 @@ Having configuration and structure, how it is shown above, we will get next resu
 * pattern rule with url mapping
 
  ![AEM SEO Canonical Pattern rule with url mapping](doc/aem-canonical-example-pattern-with-url-mapping.png)
+
+# LICENSE
+The Apache License (Version 2.0, January 2004).
